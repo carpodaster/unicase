@@ -13,6 +13,7 @@ begin
     s.files =  FileList["[A-Z]*", "{bin,generators,lib,test}/**/*", 'lib/*']
     s.files.exclude "pkg/*"
   end
+  Jeweler::GemcutterTasks.new 
 rescue LoadError
   puts "Jeweler, or one of its dependencies, is not available. Install it with: sudo gem install jeweler"
 end

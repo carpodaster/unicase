@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-"
 module Unicase
   Uppercase = Hash.new { |h,k| k}
   Lowercase = Hash.new { |h,k| k}
@@ -20,6 +20,7 @@ module Unicase
 end
 
 class String
+
   def first_unicode_capitalize
     if self =~ /\A(.)/um
       Unicase::Uppercase[$1] + $'
@@ -41,9 +42,15 @@ class String
     each_char { |x| res << Unicase::Lowercase[x] }
     res
   end
+  alias_method :utf8_downcase, :unicode_lowercase
+
   def unicode_uppercase
     res = ""
     each_char { |x| res << Unicase::Uppercase[x] }
     res
   end
+  alias_method :utf8_upcase, :unicode_uppercase
+
 end
+
+String.send(:include, Unicase)

@@ -11,6 +11,7 @@ begin
     s.description = "Upcase and downcase methods for non-ASCII string; originally taken from bkkbrad/unicase"
     s.authors = ["bkkgrad", "Carsten Zimmermann"]
     s.files =  FileList["[A-Z]*", "{bin,generators,lib,test}/**/*", 'lib/*']
+    s.files.exclude "pkg/*"
   end
 rescue LoadError
   puts "Jeweler, or one of its dependencies, is not available. Install it with: sudo gem install jeweler"

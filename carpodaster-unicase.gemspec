@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
      "README"
   ]
   s.files = [
-    "LICENSE",
+    "CHANGELOG.rdoc",
+     "LICENSE",
      "README",
      "Rakefile",
      "VERSION",
